@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
     public String YoutubePlaylistID = "";
     public String SpotifyAccessToken = "";
 
-    String clientID = "02565b925cf3402db84c0f4fbf4a554f";
-    String clientSecretKey = "0fa67889e4d74ee38d460b31b69f02b2";
+    String clientID = "YOUR_SPOTIFY_CLIENT_ID";
+    String clientSecretKey = "YOUR_SPOTIFY_CLIENT_SECRET";
     String clientTok = clientID + ":" + clientSecretKey;
 
     List<String> songNames = new ArrayList<String>();
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void getYoutubeApiAccessToken() {
-        String CLIENT_ID = "871088256066-5kvc458o54fkigitn9o944508vncpibk.apps.googleusercontent.com";
+        String CLIENT_ID = "YOUR_YOUTUBE_OAUTH_CLIENT_ID";
         Uri REDIRECT_URI = Uri.parse("com.tapps.spotya:/oauth2redirect");
         AuthorizationServiceConfiguration serviceConfig = new AuthorizationServiceConfiguration(Uri.parse("https://accounts.google.com/o/oauth2/v2/auth"), Uri.parse("https://www.googleapis.com/oauth2/v4/token"));
         AuthorizationRequest.Builder authRequestBuilder = new AuthorizationRequest.Builder(
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void createYoutubePlaylist() {
 
-        String endPoint = "https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&key=" + "AIzaSyB_sf1bA5El8YU9m3TojHRIFnq8X8Z1qCo";
+        String endPoint = "https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&key=" + "YOUR_YOUTUBE_API_KEY";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, endPoint,
@@ -374,7 +374,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getSongID(String s) {
         final String[] songID = {""};
-        String url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=" + s + "&key=" + "AIzaSyB_sf1bA5El8YU9m3TojHRIFnq8X8Z1qCo";
+        String url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=" + s + "&key=" + "YOUR_YOUTUBE_API_KEY";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -428,7 +428,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void AddVideoToPlaylist(String PlaylistID, List<String> VideoID, int songIndex){
-        String url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&key=" + "AIzaSyB_sf1bA5El8YU9m3TojHRIFnq8X8Z1qCo";
+        String url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&key=" + "YOUR_YOUTUBE_API_KEY";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url,
