@@ -23,6 +23,7 @@ Android Volley is the library module that has been used to send GET/POST request
 * Then you need create an API key and Oauth 2.0 Client ID
 * ![image](https://user-images.githubusercontent.com/60425800/124350682-a8d5b800-dc13-11eb-9071-f6ed429343c2.png)
 * After that the process is pretty straight forward as mentioned in the DOC : https://developers.google.com/youtube/v3/guides/auth/installed-apps
+* Make sure to set your **SCOPES** properly, so that you can perform the required actions without any problems(Each scope only gives you limited permission to carry out certain operations)
 **The code for the same can be found in MAINActivity.java file under the respective functions (functions jhave been given descriptive names for clear understanding)
 
 # Obtaining Spotify accessToken
@@ -30,6 +31,23 @@ Android Volley is the library module that has been used to send GET/POST request
 * Create a project in SPOTIFY FOR DEVELOPERS to get your client ID and client secret.
 * Use the client ID and Client Secret to Obtain the **Access token**
 * Using the Access token, Playlists can easily be searched using playlist ID
+
+# Accessing playlist from spotify
+* Once you have the access token, it is really a couple of sending GET/POST request to the API to do the actions that you need.
+* Visit the following site to find the endpoint, Parameters and Headers to access Spotify Playlist API : https://developer.spotify.com/console/get-playlist/
+* You can try the api for yourself.!!Have fun.
+
+# Accessing Youtube API
+* Once you have the Access token , it is really simple to do the operations and obtain data. To know the endpoints, Parameters , and other things of the request, visit : https://developers.google.com/youtube/v3/docs/playlists to view and try out the api.!!!!!!
+
+# **YOUTUBE API QUOTA** 
+*  https://developers.google.com/youtube/v3/getting-started#quota
+* Youtube Api offers every app 10,000 points/day.
+* Each of the READ/WRITE operation that you do will cost some points. If you exceed the limit you will not be able to access the API for the rest of the day.So be optimal with requests that you send.
+* There is a way to increase the Quota points for a day by filling this form : https://support.google.com/youtube/contact/yt_api_form
+
+
+
 
 
 
